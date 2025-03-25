@@ -86,47 +86,36 @@ function ProfileHeader() {
 
       {/* Added ASCII Computer Architecture diagram */}
       <div className="overflow-auto hidden lg:block">
-        <div className="text-xs h-[30vh] flex justify-center bg-[radial-gradient(circle,rgb(229,231,235)_1px,transparent_1px)] dark:bg-[radial-gradient(circle,rgb(31,41,55)_1px,transparent_1px)] bg-[size:16px_16px]" />
+        <div className="text-xs h-[40vh] flex justify-center bg-[radial-gradient(circle,rgb(229,231,235)_1px,transparent_1px)] dark:bg-[radial-gradient(circle,rgb(31,41,55)_1px,transparent_1px)] bg-[size:16px_16px]" />
       </div>
 
       <div className="px-2">
         <p className="text-[clamp(2rem,5vw,4rem)] leading-tight">
           Hi!, I'm <span className="font-bold bg-[#cccccc] px-1">Firsta Royan</span>
-          <br />
+        </p>
+        <p className="text-[clamp(1.5rem,4vw,2.5rem)] leading-tight text-gray-500 dark:text-gray-400">
           A software engineer building quality digital products
           based in Bekasi, Indonesia.
         </p>
       </div>
 
-      <div className="flex flex-row justify-between border-t border-gray-200 dark:border-gray-800">
+      {/* <div className="flex flex-row justify-between border-t border-gray-200 dark:border-gray-800">
         <div className="flex flex-row gap-2">
           <div className="flex p-2 flex-col gap-1 border-r border-gray-200 dark:border-gray-800">
             <p className="text-muted-foreground text-xs">Experience</p>
-            {/* <div className="flex flex-row gap-1"> */}
             <p className="text-muted-foreground text-sm">4 Years</p>
-            {/* </div> */}
-          </div>
-          <div className="flex p-2 flex-col gap-1 border-r border-gray-200 dark:border-gray-800">
-            <p className="text-muted-foreground text-xs">Language</p>
-            {/* <div className="flex flex-row gap-1"> */}
-            <p className="text-muted-foreground text-sm">ID/US/CN/JP</p>
-            {/* </div> */}
           </div>
           <div className="flex p-2 flex-col gap-1 border-r border-gray-200 dark:border-gray-800">
             <p className="text-muted-foreground text-xs">Occupation</p>
-            {/* <div className="flex flex-row gap-1"> */}
             <p className="text-muted-foreground text-sm">Software Engineer</p>
-            {/* </div> */}
           </div>
           <div className="flex p-2 flex-col gap-1 border-r border-gray-200 dark:border-gray-800">
             <p className="text-muted-foreground text-xs">Focus</p>
-            {/* <div className="flex flex-row gap-1"> */}
             <p className="text-muted-foreground text-sm">Web Platform</p>
-            {/* </div> */}
           </div>
 
         </div>
-      </div>
+      </div> */}
 
     </BorderedBox>
   );
@@ -443,11 +432,75 @@ function Writing() {
           onClick={() => console.log(`Clicked on article: ${article.title}`)}
         />
       ))}
-       <div className="flex flex-row justify-end border-t border-gray-200 dark:border-gray-800">
-              <div className="p-2 border-l border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer">
-                <p className="text-muted-foreground text-[16px] cursor-pointer">Read More ↗</p>
-              </div>
+      <div className="flex flex-row justify-end border-t border-gray-200 dark:border-gray-800">
+        <div className="p-2 border-l border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer">
+          <p className="text-muted-foreground text-[16px] cursor-pointer">Read More ↗</p>
+        </div>
+      </div>
+    </BorderedBox>
+  );
+}
+
+function Footer() {
+  return (
+    <BorderedBox className="mt-10 mb-10">
+      <TitleBar title="Contact" />
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+        {/* Contact Information */}
+        <div className="p-4 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-800">
+          <div className="flex flex-col gap-3">
+            <p className="text-muted-foreground text-xs">Get in touch</p>
+            <div className="flex items-center gap-2">
+              <Mail size={16} className="text-muted-foreground" />
+              <a href="mailto:firsta.royan@example.com" className="text-muted-foreground hover:underline">
+                firsta.royan@example.com
+              </a>
             </div>
+            <div className="flex items-center gap-2">
+              <FileText size={16} className="text-muted-foreground" />
+              <a href="/resume.pdf" className="text-muted-foreground hover:underline" target="_blank" rel="noopener noreferrer">
+                Download Resume
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Social Links */}
+        <div className="p-4 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-800">
+          <div className="flex flex-col gap-3">
+            <p className="text-muted-foreground text-xs">Social</p>
+            <div className="grid grid-cols-2 gap-2">
+              <a href="https://github.com/username" className="text-muted-foreground hover:underline" target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+              <a href="https://linkedin.com/in/username" className="text-muted-foreground hover:underline" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+              <a href="https://twitter.com/username" className="text-muted-foreground hover:underline" target="_blank" rel="noopener noreferrer">
+                Twitter
+              </a>
+              <a href="https://medium.com/@username" className="text-muted-foreground hover:underline" target="_blank" rel="noopener noreferrer">
+                Medium
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Copyright & Credits */}
+        <div className="p-4">
+          <div className="flex flex-col gap-3">
+            <p className="text-muted-foreground text-xs">Copyright</p>
+            <p className="text-muted-foreground text-sm">
+              © {new Date().getFullYear()} Firsta Royan. All rights reserved.
+            </p>
+            <p className="text-muted-foreground text-xs mt-2">
+              Built with Next.js, Tailwind CSS, and TypeScript.
+            </p>
+          </div>
+        </div>
+      </div>
+
     </BorderedBox>
   );
 }
@@ -461,18 +514,7 @@ export default function Home() {
         <NotableProjects />
         <WorkExperience />
         <Writing />
-        {/* <ProfileHeader /> */}
-
-        {/* <BorderedBox className="mt-5 flex flex-col justify-between">
-          <div className="px-2 border-b border-gray-200 dark:border-gray-800">
-            <p className="text-muted-foreground text-xl">Introduction</p>
-          </div>
-
-          <div className="flex flex-1">
-            <ProfileImage />
-            <ProfileInfo />
-          </div>
-        </BorderedBox> */}
+        <Footer />
       </div>
     </div>
   );
